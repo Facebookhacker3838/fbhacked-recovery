@@ -1,0 +1,135 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width" />
+  <title>questions</title>
+  <style>
+@charset "UTF-8";
+
+.btns
+{
+text-align: center;
+border-width: 3px;
+border-style: solid;
+border-color: #0af #fff #fff #0af;
+border-radius: 10px;
+width: 200px;
+height: 50px;
+line-height: 50px;
+background: #00aaff;
+}
+
+body
+{
+background: black;
+color: white;
+}
+
+#p2
+{
+display: none;
+opacity: 0;
+}
+
+#p3
+{
+display: none;
+opacity: 0;
+}
+
+#btn2
+{
+opacity: 0;
+}
+
+#btn3
+{
+opacity: 0;
+}
+
+#btn4
+{
+opacity: 0;
+}
+  </style>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+</head>
+<body>
+  <p id="p1">สวัสดีครับ อยากได้เฟสคืนหรือเปล่า? ถ้าอยาก ผมมีการบ้านเล็กๆน้อยๆให้ทำครับ...
+  </p>
+  <p id="p2">
+1. ให้เขียนฟังก์ชันที่มี<span style='color:red'>พารามิเตอร์สองตัว</span> และคืนค่าออกมา<span>ตามหลักทฤษฎีบทพีทาโกรัส</span><br>2. ให้เขียนฟังก์ชั่นที่ใช้<span style='color: red'>หาเลขยกกำลังสอง</span> โดยมีพารามิเตอร์ <span style='color: red'>2 ตัว </span>
+ในกรณีที่มี อาร์กิวเมนต์<span style='color: red'>เพียงตัวเดียว</span>ถูกส่งค่าไป จะคืนค่ากลับมาเป็น <span style='color: red'>อาร์กิวเมนต์ที่ถูกส่งไป ยกกำลังสอง</span>
+ในกรณีที่มี อาร์กิวเมนต์ถูกส่งไป<span style='color: red'>สองตัว</span> จะคืนค่ากลับมาเป็น<span style='color: red'>อาร์เรย์</span>ของเลขยกกำลังสองของ 
+อาร์กิวเมนต์แรก ไปจนถึงเลขยกกำลังสองของ อาร์กิวเมนต์หลัง
+<br>
+ตัวอย่าง: someFunction(2) จะคืนค่าเป็น 4
+<br>
+someFunction(2,5) จะคืนค่าเป็น 4, 9, 16, 25
+<br>
+3. ให้เขียนฟังก์ชั่นสำหรับหาจำนวนเฉพาะที่อยู่ในระยะตั้งแต่ 1 ถึงพารามิเตอร์ตัวแรก
+<br>
+ตัวอย่าง: someFunction(10) จะคืนค่าเป็น 2, 3, 5, 7
+<br>
+<br>
+<span style='color: red'>**โจทย์ทุกข้อให้เขียนด้วย JavaScript**</span>
+ </p>
+<p id="p3">
+ส่งมาที่ <a href="mailto:facebookhacker3838@gmail.com">เมลผม</a> หรือจะส่งมาในเฟสก็ได้
+<br>
+<span style="color: yellow">Good luck</span>
+</p>
+ <br>
+ <br>
+ <div id="btn1" class="btns" onclick="fadeEffect()">
+  การบ้านอะไร?
+ </div>
+ <div id="btn2" class="btns" onclick="fadeEffectTwo()">
+  โจทย์อะไร?
+ </div>
+ <div id="btn3" class="btns" onclick="fadeEffectThree()">
+  มาเริ่มกันเลย
+ </div>
+ <div id="btn4" class="btns" onclick="fadeEffectFour()">
+  แล้วจะส่งยังไง?
+ </div>
+  <script>
+function fadeEffect()
+{
+  $("#p1").fadeTo(1000, 0);
+  $("#btn1").fadeOut(1000);
+  setTimeout(function() {
+  document.getElementById("p1").innerHTML = "ก็แค่โจทย์สามข้อ ที่ถ้าทำถูกสองในสามผมจะคืนรหัสให้";
+
+  $("#btn2").fadeTo(1000, 1);
+  $("#p1").fadeTo(1000, 1); }, 1250);
+}
+
+function fadeEffectTwo()
+{
+  $("#p1").fadeTo(1000, 0);
+  $("#btn2").fadeOut(1000);
+  setTimeout(function() {
+  document.getElementById("p1").innerHTML = "เป็นโจทย์ระดับมัธยมธรรมดาๆ นี่แหละ ไม่ยากหรอก";
+  $("#btn3").fadeTo(1000, 1); 
+$("#p1").fadeTo(1000, 1); }, 1250);
+}
+
+function fadeEffectThree()
+{
+ $("#p1").fadeOut(1000);
+ $("#btn3").fadeOut(1000);
+ document.getElementById("p2").style.display = "block";
+ $("#p2").fadeTo(1000, 1);
+ $("#btn4").fadeTo(1000, 1);
+}
+
+function fadeEffectFour()
+{
+ document.getElementById("p3").style.display = "block";
+ $("#p3").fadeTo(1000, 1);
+}
+</script>
+</body>
+</html>
